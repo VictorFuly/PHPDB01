@@ -113,6 +113,12 @@ SQL;
         // Feedback
         $feedback = true;
 
+    // Se ocorreram erros...
+    else :
+
+        // Formada mensagem de erro.
+        $error = '<h3>Oooops!</h3><p>Ocorreram erros que impedem seu cadastro:</p><ul>' . $error . '</ul>';
+
     endif;
 
 // Obtendo os dados do banco e preenchendo o formulário.
