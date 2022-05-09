@@ -17,57 +17,6 @@ require($_SERVER['DOCUMENT_ROOT'] . '/_config.php');
  * Seus códigos PHP desta página iniciam aqui! *
  ***********************************************/
 
-// Se usuário não está logado, redireciona para a página inicial.
-if (!isset($_COOKIE['user'])) header('Location: /');
-
-// Primeiro nome do usuário
-$nome = explode(' ', $user['user_name'])[0];
-
-// Obtém a idade do usuário
-$idade = get_years_old($user['user_birth']);
-
-// Formata perfil para exibição
-$html = <<<HTML
-
-<div class="author-meta">
-
-    <h2>{$nome}</h2>
-    <div class="user-photo">
-        <img src="{$user['user_photo']}" alt="{$user['user_name']}">
-        <a href="/user/profile/" title="Alterar foto de perfil."><i class="fa-solid fa-pen-to-square fa-fw"></i></a>
-    </div>
-    &nbsp;
-    <ul>
-        <li><strong>{$user['user_name']}</strong></li>
-        <li>E-mail: <a href="mailto:{$user['user_email']}" target="_blank">{$user['user_email']}</a></li>
-        <li>Nasceu em {$user['birth_br']} ({$idade} anos)</li>
-        <li>{$user['user_profile']}</li>
-    </ul>
-    <hr class="divider">
-    <div class="user-links">
-
-        <a href="/user/edit/">
-            <i class="fa-solid fa-address-card fa-fw"></i>
-            Editar Perfil
-        </a>
-
-        <a href="/user/logout/">
-            <i class="fa-solid fa-right-from-bracket fa-fw"></i>
-            Logout / Sair
-        </a>
-
-    </div>
-    <hr class="divider">
-    <div class="text-center">
-        <a href="/user/delete/">
-            <i class="fa-solid fa-user-xmark fa-fw"></i>
-            Cancelar cadastro
-        </a>
-    </div>
-
-</div>
-
-HTML;
 
 /************************************************
  * Seus códigos PHP desta página terminam aqui! *
@@ -81,7 +30,7 @@ HTML;
  *     → https://www.w3schools.com/php/php_variables.asp
  *     → https://www.php.net/manual/pt_BR/language.variables.basics.php
  */
-$title = "Perfil.";
+$title = "Nova senha.";
 
 /**
  * Inclui o cabeçalho da página.
@@ -92,7 +41,9 @@ require($_SERVER['DOCUMENT_ROOT'] . '/_header.php');
 
 <section>
 
-    <?php echo $html ?>
+    <h2>Título da página</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, iste aliquam aperiam voluptatem molestias nemo odit unde modi cupiditate exercitationem doloremque quaerat soluta rerum quidem dignissimos officiis sapiente, aut alias!</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio soluta voluptatum consequatur voluptatibus cupiditate temporibus qui, nostrum deserunt minus laudantium in officia rem dignissimos facilis modi culpa error aliquam? Quam?</p>
 
 </section>
 
